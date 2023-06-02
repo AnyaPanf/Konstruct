@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT-Academy</title>
+    <title>Konstrukt</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/media.css">
 </head>
 
 <body>
@@ -46,6 +44,11 @@
                             d="M65.194 8.9884L71.7394 0.80658V17.1702L65.194 8.9884Z" fill="#00A4E5" />
                     </svg>
                 </div>
+                <div class="header__menu">
+                    <input type="checkbox" id="checkbox" class="header__menu-input">
+                    <label for="checkbox" class="header__menu-label">
+                        <div></div>
+                    </label>
                 <nav class="header__nav">
                     <a href="#" class="header__link" target="_blank">HOME</a>
                     <a href="#" class="header__link" target="_blank">ABOUT</a>
@@ -103,24 +106,16 @@
         <div class="container">
             <div class="cards__wrapper">
                 <div class="cards__card">
-                    <svg width="66" height="75" viewBox="0 0 66 75" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <rect width="65.625" height="75" fill="url(#pattern0)" />
-                        <defs>
-                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                <use xlink:href="#image0_0_49" transform="scale(0.00892857 0.0078125)" />
-                            </pattern>
-                            <image id="image0_0_49" width="112" height="128"
-                                xlink:href="data:image/png;base64,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" />
-                        </defs>
-                    </svg>
+                    <div class="cards__img">
+                        <img src="./images/Cards-1.svg" alt="PROJECT AND CONSTRUCTION MANAGEMENT">
+                    </div>
                     <h4 class="cards__title">PROJECT AND CONSTRUCTION MANAGEMENT</h4>
                     <p class="cards__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
                         nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
                 </div>
                 <div class="cards__card">
                     <div class="cards__img">
-                        <img src="./images/icon-1.png" alt="icon 1">
+                        <img src="./images/Cards-2.svg" alt="STRUCTURE AUDIT AND MAINTENANCE">
                     </div>
                     <h4 class="cards__title">STRUCTURE AUDIT AND MAINTENANCE</h4>
                     <p class="cards__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
@@ -128,7 +123,7 @@
                 </div>
                 <div class="cards__card">
                     <div class="cards__img">
-                        <img src="./images/icon-1.png" alt="icon 1">
+                        <img src="./images/Cards-3.svg" alt="FACTORY CONSTRUCTION AND MODELING">
                     </div>
                     <h4 class="cards__title">FACTORY CONSTRUCTION AND MODELING</h4>
                     <p class="cards__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
@@ -143,68 +138,150 @@
         <button class="touch__btn">GET IN TOUCH</button>
     </section>
 
-    <!-- <section class="signup">
-        <p class="signup__text">Newsletter Signup</p>
-      
-    </section> -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup__wrapper">
+                <p class="signup__text">Newsletter Signup</p>
+                <div class="signup__email">
+                    <input class="signup__field" type="email" placeholder="test@youremail.com">
+                    <button class="signup__btn">SIGNUP</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
-                <div class="footer__company">
-                    <h6 class="section__subtitle">COMPANY</h6>
+                <div>
+                    <h5 class="footer__subtitle">
+                        COMPANY
+                    </h5>
                     <svg width="102" height="23" viewBox="0 0 102 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M4.13178 13.1603L3.1365 15.0338V21.3274H-0.0834961V0.836478H3.1365V9.76466L7.35178 0.836478H10.5718L6.09305 9.96957L10.5718 21.3274H7.26396L4.13178 13.1603ZM15.1174 16.6145C15.1174 17.3561 15.2686 17.8781 15.5711 18.1806C15.8736 18.4831 16.2785 18.6343 16.7859 18.6343C17.2933 18.6343 17.6982 18.4831 18.0007 18.1806C18.3032 17.8781 18.4544 17.3561 18.4544 16.6145V5.54939C18.4544 4.80781 18.3032 4.28578 18.0007 3.98329C17.6982 3.68081 17.2933 3.52957 16.7859 3.52957C16.2785 3.52957 15.8736 3.68081 15.5711 3.98329C15.2686 4.28578 15.1174 4.80781 15.1174 5.54939V16.6145ZM11.8975 5.75429C11.8975 4.0955 12.317 2.82215 13.1562 1.9342C13.9954 1.04626 15.2053 0.602295 16.786 0.602295C18.3667 0.602295 19.5767 1.04626 20.4158 1.9342C21.255 2.82215 21.6746 4.0955 21.6746 5.75429V16.4096C21.6746 18.0684 21.255 19.3417 20.4158 20.2297C19.5767 21.1176 18.3667 21.5616 16.786 21.5616C15.2053 21.5616 13.9954 21.1176 13.1562 20.2297C12.317 19.3417 11.8975 18.0684 11.8975 16.4096V5.75429ZM26.9518 6.48612V21.3274H24.0538V0.836478H28.0935L31.4013 13.1018V0.836478H34.27V21.3274H30.9622L26.9518 6.48612ZM36.5034 5.75429C36.5034 4.0955 36.8985 2.82215 37.6889 1.9342C38.4793 1.04626 39.6648 0.602295 41.2455 0.602295C42.8263 0.602295 44.0118 1.04626 44.8022 1.9342C45.5925 2.82215 45.9877 4.0955 45.9877 5.75429V6.39829H42.9434V5.54939C42.9434 4.80781 42.8019 4.28578 42.5189 3.98329C42.2359 3.68081 41.8408 3.52957 41.3334 3.52957C40.826 3.52957 40.4308 3.68081 40.1478 3.98329C39.8648 4.28578 39.7234 4.80781 39.7234 5.54939C39.7234 6.25193 39.8795 6.87153 40.1917 7.4082C40.504 7.94487 40.8943 8.45226 41.3626 8.93039C41.831 9.40851 42.3335 9.88663 42.8702 10.3647C43.4068 10.8429 43.9094 11.3649 44.3777 11.9308C44.8461 12.4968 45.2364 13.1408 45.5486 13.8628C45.8609 14.5849 46.017 15.4338 46.017 16.4096C46.017 18.0684 45.6121 19.3417 44.8022 20.2297C43.9923 21.1176 42.797 21.5616 41.2163 21.5616C39.6355 21.5616 38.4402 21.1176 37.6304 20.2297C36.8205 19.3417 36.4155 18.0684 36.4155 16.4096V15.1508H39.4599V16.6145C39.4599 17.3561 39.6111 17.8732 39.9136 18.1659C40.2161 18.4587 40.621 18.605 41.1284 18.605C41.6358 18.605 42.0408 18.4587 42.3433 18.1659C42.6458 17.8732 42.797 17.3561 42.797 16.6145C42.797 15.9119 42.6409 15.2923 42.3286 14.7557C42.0164 14.219 41.6261 13.7116 41.1577 13.2335C40.6894 12.7554 40.1868 12.2772 39.6502 11.7991C39.1135 11.321 38.611 10.799 38.1426 10.233C37.6743 9.66708 37.284 9.02309 36.9717 8.30102C36.6595 7.57896 36.5034 6.73006 36.5034 5.75429ZM47.2546 0.836478H57.2073V3.76375H53.8409V21.3274H50.6209V3.76375H47.2546V0.836478ZM65.6756 21.3274C65.6366 21.1908 65.5976 21.0639 65.5585 20.9468C65.5195 20.8298 65.4854 20.6834 65.4561 20.5078C65.4268 20.3321 65.4073 20.1077 65.3975 19.8345C65.3878 19.5613 65.3829 19.2198 65.3829 18.8099V15.5899C65.3829 14.6337 65.217 13.9604 64.8853 13.5701C64.5535 13.1798 64.0169 12.9847 63.2753 12.9847H62.1629V21.3274H58.9429V0.836478H63.8022C65.4805 0.836478 66.6953 1.22678 67.4466 2.00739C68.198 2.788 68.5736 3.96865 68.5736 5.54939V7.15939C68.5736 9.26703 67.8711 10.6526 66.466 11.3161C67.2856 11.6479 67.8467 12.1894 68.1492 12.9408C68.4517 13.6921 68.6029 14.6044 68.6029 15.6778V18.8392C68.6029 19.3466 68.6224 19.7906 68.6615 20.1711C68.7005 20.5517 68.7981 20.9371 68.9542 21.3274H65.6756ZM62.1628 3.76375V10.0574H63.4215C64.0265 10.0574 64.4998 9.90127 64.8413 9.58902C65.1828 9.27678 65.3535 8.71085 65.3535 7.89121V5.87139C65.3535 5.12981 65.2218 4.59315 64.9584 4.26139C64.6949 3.92963 64.2802 3.76375 63.7143 3.76375H62.1628ZM74.1145 0.836478V16.6438C74.1145 17.3853 74.2657 17.9025 74.5682 18.1952C74.8707 18.4879 75.2757 18.6343 75.7831 18.6343C76.2904 18.6343 76.6954 18.4879 76.9979 18.1952C77.3004 17.9025 77.4516 17.3853 77.4516 16.6438V0.836478H80.496V16.4388C80.496 18.0976 80.091 19.371 79.2811 20.2589C78.4713 21.1469 77.276 21.5908 75.6952 21.5908C74.1145 21.5908 72.9192 21.1469 72.1093 20.2589C71.2994 19.371 70.8945 18.0976 70.8945 16.4388V0.836478H74.1145ZM91.8203 0.836478H101.773V3.76375H98.4067V21.3274H95.1867V3.76375H91.8203V0.836478Z"
+                            d="M4.13178 13.1603L3.1365 15.0338V21.3274H-0.0834961V0.836478H3.1365V9.76466L7.35178 0.836478H10.5718L6.09305 9.96957L10.5718 21.3274H7.26396L4.13178 13.1603ZM15.1174 16.6145C15.1174 17.3561 15.2686 17.8781 15.5711 18.1806C15.8736 18.4831 16.2785 18.6343 16.7859 18.6343C17.2933 18.6343 17.6982 18.4831 18.0007 18.1806C18.3032 17.8781 18.4544 17.3561 18.4544 16.6145V5.54939C18.4544 4.80781 18.3032 4.28578 18.0007 3.98329C17.6982 3.68081 17.2933 3.52957 16.7859 3.52957C16.2785 3.52957 15.8736 3.68081 15.5711 3.98329C15.2686 4.28578 15.1174 4.80781 15.1174 5.54939V16.6145ZM11.8975 5.75429C11.8975 4.0955 12.317 2.82215 13.1562 1.9342C13.9954 1.04626 15.2053 0.602295 16.786 0.602295C18.3667 0.602295 19.5767 1.04626 20.4158 1.9342C21.255 2.82215 21.6746 4.0955 21.6746 5.75429V16.4096C21.6746 18.0684 21.255 19.3417 20.4158 20.2297C19.5767 21.1176 18.3667 21.5616 16.786 21.5616C15.2053 21.5616 13.9954 21.1176 13.1562 20.2297C12.317 19.3417 11.8975 18.0684 11.8975 16.4096V5.75429ZM26.9518 6.48611V21.3274H24.0538V0.836478H28.0935L31.4013 13.1018V0.836478H34.27V21.3274H30.9622L26.9518 6.48611ZM36.5034 5.75429C36.5034 4.0955 36.8985 2.82215 37.6889 1.9342C38.4793 1.04626 39.6648 0.602295 41.2455 0.602295C42.8263 0.602295 44.0118 1.04626 44.8022 1.9342C45.5925 2.82215 45.9877 4.0955 45.9877 5.75429V6.39829H42.9434V5.54939C42.9434 4.80781 42.8019 4.28578 42.5189 3.98329C42.2359 3.68081 41.8408 3.52957 41.3334 3.52957C40.826 3.52957 40.4308 3.68081 40.1478 3.98329C39.8648 4.28578 39.7234 4.80781 39.7234 5.54939C39.7234 6.25193 39.8795 6.87153 40.1917 7.4082C40.504 7.94487 40.8943 8.45226 41.3626 8.93039C41.831 9.40851 42.3335 9.88663 42.8702 10.3647C43.4068 10.8429 43.9094 11.3649 44.3777 11.9308C44.8461 12.4968 45.2364 13.1408 45.5486 13.8628C45.8609 14.5849 46.017 15.4338 46.017 16.4096C46.017 18.0684 45.6121 19.3417 44.8022 20.2297C43.9923 21.1176 42.797 21.5616 41.2163 21.5616C39.6355 21.5616 38.4402 21.1176 37.6304 20.2297C36.8205 19.3417 36.4155 18.0684 36.4155 16.4096V15.1508H39.4599V16.6145C39.4599 17.3561 39.6111 17.8732 39.9136 18.1659C40.2161 18.4587 40.621 18.605 41.1284 18.605C41.6358 18.605 42.0408 18.4587 42.3433 18.1659C42.6457 17.8732 42.797 17.3561 42.797 16.6145C42.797 15.9119 42.6409 15.2923 42.3286 14.7557C42.0164 14.219 41.6261 13.7116 41.1577 13.2335C40.6894 12.7554 40.1868 12.2772 39.6502 11.7991C39.1135 11.321 38.611 10.799 38.1426 10.233C37.6743 9.66708 37.284 9.02309 36.9717 8.30102C36.6595 7.57896 36.5034 6.73006 36.5034 5.75429ZM47.2546 0.836478H57.2073V3.76375H53.8409V21.3274H50.6209V3.76375H47.2546V0.836478ZM65.6756 21.3274C65.6366 21.1908 65.5976 21.0639 65.5585 20.9468C65.5195 20.8298 65.4854 20.6834 65.4561 20.5078C65.4268 20.3321 65.4073 20.1077 65.3975 19.8345C65.3878 19.5613 65.3829 19.2198 65.3829 18.8099V15.5899C65.3829 14.6337 65.217 13.9604 64.8853 13.5701C64.5535 13.1798 64.0169 12.9847 63.2753 12.9847H62.1629V21.3274H58.9429V0.836478H63.8022C65.4805 0.836478 66.6953 1.22678 67.4466 2.00739C68.198 2.788 68.5736 3.96865 68.5736 5.54939V7.15939C68.5736 9.26703 67.8711 10.6526 66.466 11.3161C67.2856 11.6479 67.8467 12.1894 68.1492 12.9408C68.4517 13.6921 68.6029 14.6044 68.6029 15.6778V18.8392C68.6029 19.3466 68.6224 19.7906 68.6615 20.1711C68.7005 20.5517 68.7981 20.9371 68.9542 21.3274H65.6756ZM62.1628 3.76375V10.0574H63.4215C64.0265 10.0574 64.4998 9.90127 64.8413 9.58902C65.1828 9.27678 65.3536 8.71085 65.3536 7.89121V5.87139C65.3536 5.12981 65.2218 4.59315 64.9584 4.26139C64.6949 3.92963 64.2802 3.76375 63.7143 3.76375H62.1628ZM74.1145 0.836478V16.6438C74.1145 17.3853 74.2657 17.9025 74.5682 18.1952C74.8707 18.4879 75.2757 18.6343 75.7831 18.6343C76.2904 18.6343 76.6954 18.4879 76.9979 18.1952C77.3004 17.9025 77.4516 17.3853 77.4516 16.6438V0.836478H80.496V16.4388C80.496 18.0976 80.091 19.371 79.2811 20.2589C78.4713 21.1469 77.276 21.5908 75.6952 21.5908C74.1145 21.5908 72.9192 21.1469 72.1093 20.2589C71.2994 19.371 70.8945 18.0976 70.8945 16.4388V0.836478H74.1145ZM91.8203 0.836478H101.773V3.76375H98.4067V21.3274H95.1867V3.76375H91.8203V0.836478Z"
                             fill="white" />
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M82.0255 11.4851L90.3892 1.03052V21.9396L82.0255 11.4851Z" fill="#00A4E5" />
                     </svg>
-                    <p class="footer__desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                        nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+                    <p class="footer__desc">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam erat.
+                    </p>
                 </div>
-                <div class="footer__links">
-                    <h6 class="section__subtitle">LINKS</h6>
-                    <div>
-                        <ul>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#"></a>about</a></li>
-                            <li><a href="#"></a>services</a></li>
-                            <li><a href="#"></a>projects</a></li>
-                            <li><a href="#"></a>contact us</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#"></a>FAQ</a></li>
-                            <li><a href="#"></a>terms</a></li>
-                            <li><a href="#"></a>careers</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">blog</a></li>
-                            <li><a href="#">partners</a></li>
-                            <li><a href="#">news</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-                <div class="footer__contacts">
-                    <h6 class="section__subtitle">CONTACT US</h6>
-                    <ul>
-                        <li>213 Baker Street<br>
-                            Oriel City Kounty<br>
-                            7000 KNW,<br>
-                            Kountry Name</li>
-                        <li>+23 994 233 4022</li>
-                        <li>info@konstruct.com</li>
-                    </ul>
-                </div>
-                <div class="footer__socials">
-                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-google"></i></a>
-                </div>
+                <ul>
+                    <h5 class="footer__subtitle">
+                        LINKS
+                    </h5>
+                    <li class="footer__link">
+                        <a href="#">
+                            HOME
+                        </a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#">
+                            ABOUT
+                        </a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#">
+                            SERVICES
+                        </a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#">
+                            PROJECTS
+                        </a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#">
+                            CONTACT US
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pt">
+                    <li class="footer__link">
+                        <a href="#">
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#">
+                            TERMS
+                        </a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#">
+                            CAREERS
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pt">
+                    <li class="footer__link">
+                        <a href="#">
+                            BLOG
+                        </a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#">
+                            PARTNERS
+                        </a>
+                    </li>
+                    <li class="footer__link">
+                        <a href="#">
+                            NEWS
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer__info">
+                    <h5 class="footer__subtitle">
+                        CONTACT US
+                    </h5>
+                    <li class="footer__info-item">
+                        <a href="#">
+                            213 Baker Street
+                            Oriel City Kounty
+                            7000 KNW,
+                            Kountry Name
+                        </a>
+                    </li>
+                    <li class="footer__info-item">
+                        <a href="#">
+                            +23 994 233 4022
+                        </a>
+                    </li>
+                    <li class="footer__info-item">
+                        <a href="#">
+                            info@konstruct.com
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer__socials pt">
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-square-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </footer>
+
+    <section class="info">
+        <p class="info__desc">
+            © 2017 Konstruct Inc. Designed by Jane Kathryn Teo
+        </p>
+    </section>
 
 </body>
 
